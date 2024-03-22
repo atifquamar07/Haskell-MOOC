@@ -3,6 +3,8 @@ module Set9b where
 import Data.List
 import Data.Maybe (listToMaybe)  
 
+import Mooc.Todo
+import Data.List
 --------------------------------------------------------------------------------
 -- Ex 1: In this exercise set, we'll solve the N Queens problem step by step.
 -- N Queens is a generalisation of the Eight Queens problem described in
@@ -132,7 +134,7 @@ sameCol :: Coord -> Coord -> Bool
 sameCol (_, j) (_, l) = j == l
 
 sameDiag :: Coord -> Coord -> Bool
-sameDiag (i, j) (k, l) = abs (i - k) == abs (j - l)
+sameDiag (i, j) (k, l) = (k - i) == (l - j)
 
 sameAntidiag :: Coord -> Coord -> Bool
 sameAntidiag (i, j) (k, l) = i + j == k + l
